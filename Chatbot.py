@@ -3,6 +3,44 @@ import unicodedata
 import sys
 import random
 
+
+class Base:
+    habitats = {
+        "desierto": ["dromedarios", "camello", "lince rojo", "licaon", "tortuga africana", "papion sagrado", "borrego cimarron", "tarantula", "lobo mexicano"],
+        "pastizales": ["loro gris", "puerco espin", "hiena", "tortuga aldabra", "tortuga mapini", "tortuga leopardo", "tortuga patas amarillas", "tortuga patas rojas", "leon africano", "rinoceronte blanco", "antilope acuatico", "ganso egipcio", "antilope sable", "hipopotamo", "ganso chino", "antilope orix", "antilope ñu", "cebra", "jirafa", "gallina de guinea", "grulla coronada", "avestruz", "antilope nilgo", "venado cerdo", "muflon europeo", "antilope gemsbock", "wallaby", "canguro rojo", "llama", "antilope nyala", "bisonte americano", "liebre de la patagonia"],
+        "franja costera": ["pinguino", "lobo marino"],
+        "tundra": ["oso polar"],
+        "aviario": ["flamenco", "cisne", "aguila real", "halcon peregrino", "condor de los andes", "aguila cola blanca", "aguila rojinegra", "aguililla cola roja", "aguila caminera", "zopilote rey", "buho", "caracara", "zopilote comun", "condor de california", "pato pijiji", "emú"],
+        "bosque templado": ["xoloitzcuintle", "venado cola blanca", "pavo real", "guajolote norteño", "teporingo", "mono japones", "mapache", "cacomixtle", "zorrillo", "oso pardo", "caracal", "lobo canadiense", "gamo", "zorro artico", "panda rojo", "panda gigante", "venado sika", "wapiti", "lobo mexicano", "tigre de sumatra"],
+        "bosque tropical": ["ajolote", "jaguar negro", "ocelote", "capibara", "cotorra de la patagonia", "mono ardilla", "jaguar", "mono araña", "capuchino de cuernos", "coati", "martucha", "capuchino de gargante blanca", "oso de anteojos", "binturong", "mono rhesus", "mono araña", "chimpance", "puma", "paloma verde", "venado temazate", "aguti dorado", "orangutan", "cocodrilo", "titi de goeldi", "titi cabeza de leon dorado", "titi copete de algodon", "gorila", "pantera", "leopardo", "tapir", "mono patas", "tigre de bengala"]
+    }
+
+    habitats_2 = {
+        "desierto": ["dromedarios", "camello", "lince rojo", "licaon", "tortuga africana", "papion sagrado", "borrego cimarron", "tarantula", "lobo mexicano"],
+        "pastizales": ["loro gris", "puerco espin", "hiena", "tortuga aldabra", "tortuga mapini", "tortuga leopardo", "tortuga patas amarillas", "tortuga patas rojas", "leon africano", "rinoceronte blanco", "antilope acuatico", "ganso egipcio", "antilope sable", "hipopotamo", "ganso chino", "antilope orix", "antilope ñu", "cebra", "jirafa", "gallina de guinea", "grulla coronada", "avestruz", "antilope nilgo", "venado cerdo", "muflon europeo", "antilope gemsbock", "wallaby", "canguro rojo", "llama", "antilope nyala", "bisonte americano", "liebre de la patagonia"],
+        "franja costera": ["pinguino", "lobo marino"],
+        "tundra": ["oso polar"],
+        "aviario": ["flamenco", "cisne", "aguila real", "halcon peregrino", "condor de los andes", "aguila cola blanca", "aguila rojinegra", "aguililla cola roja", "aguila caminera", "zopilote rey", "buho", "caracara", "zopilote comun", "condor de california", "pato pijiji", "emú"],
+        "bosque templado": ["xoloitzcuintle", "venado cola blanca", "pavo real", "guajolote norteño", "teporingo", "mono japones", "mapache", "cacomixtle", "zorrillo", "oso pardo", "caracal", "lobo canadiense", "gamo", "zorro artico", "panda rojo", "panda gigante", "venado sika", "wapiti", "lobo mexicano", "tigre de sumatra"],
+        "bosque tropical": ["ajolote", "jaguar negro", "ocelote", "capibara", "cotorra de la patagonia", "mono ardilla", "jaguar", "mono araña", "capuchino de cuernos", "coati", "martucha", "capuchino de gargante blanca", "oso de anteojos", "binturong", "mono rhesus", "mono araña", "chimpance", "puma", "paloma verde", "venado temazate", "aguti dorado", "orangutan", "cocodrilo", "titi de goeldi", "titi cabeza de leon dorado", "titi copete de algodon", "gorila", "pantera", "leopardo", "tapir", "mono patas", "tigre de bengala"]
+    }
+
+
+    def get_habitat(self, animal):
+        for habitat, animals in self.habitats.items():
+            if animal in animals:
+                return habitat
+        return None
+
+    def get_habitats(self):
+        return list(self.habitats.keys())
+
+    def get_animals(self):
+        animals = []
+        for habitat in self.habitats.values():
+            animals.extend(habitat)
+        return animals
+
 class ChatBot:
 
     #Constructor
@@ -11,7 +49,7 @@ class ChatBot:
 
 
     #Regresa una respuesta en base al mensaje que escribio el usuario
-    def answer(self, user_input):
+    def get_response(self, user_input):
         return self.check_all_messages(self.clean_str(user_input))
 
 
@@ -59,6 +97,7 @@ class ChatBot:
     #Revisa el mensaje enviado por el usuario y busca palabras clave para escojer una respuesta
     def check_all_messages(self, message):
             highest_prob = {}
+            bd = Base()
 
             def response(bot_response, list_of_words, single_response = False, required_words = []):
                 nonlocal highest_prob
@@ -79,6 +118,31 @@ class ChatBot:
             response(['La entrada al zoológico es totalmente gratis', 'No se cobra por la entrada al zoológico'], ['entrada', 'visita', 'entrar', 'visitar'], single_response=True)
             #Respuestas de estacionamiento
             response(['Hay más de un estacionamiento en la zona, da click el siguiente enlace para conocer más detalles de estos. https://www.chapultepec.org.mx/wp-content/uploads/2019/01/estacionamientos-y-ban%CC%83os.pdf'],['estacionamiento', 'entrar', 'estacionarme', 'carro', 'auto', 'aparcar', 'estacionar', 'aparcamiento'], single_response=True)
+            #Respuestas a cuota de estacionamiento
+            response(['Hay más de un estacionamiento en la zona, da click el siguiente enlace para conocer más detalles de estos. https://www.chapultepec.org.mx/wp-content/uploads/2019/01/estacionamientos-y-ban%CC%83os.pdf'],['estacionamiento', 'entrar', 'estacionarme', 'carro', 'auto', 'aparcar', 'estacionar', 'aparcamiento'], single_response=True)
+            #Respuestas a dudas generales
+            response(['El parque abre de Lunes a Viernes de Horario 8 a.m hasta 10 p.m, de Sabado a Domingo de 10 a.m hasta 10 p.m'],['horario','apertura','cierre','hora','dias','abren'], single_response=True)
+            #Respuestas a servicios
+            response(['El zoológico cuenta con diversos servicios, puedes mirar un mapa para encontrar lo que buscas en el siguiente link. http://data.sedema.cdmx.gob.mx/zoo_chapultepec/mapa/'],['alimentos','salidas','emergencia','telefonos','sanitarios','oficinas','puntos','reunion','area','educativa','primeros','auxilios','sillas','ruedas','paqueteria','venta','mapas','guias','servicios','comida','comer'],single_response=True)                 
+            #Respuesta sobre su nombre
+            response(['¡Mi nombre es Doge Guide y estoy listo para ayudarte a explorar el zoologico!', 'Soy Doge Guide y me encantara ayudarte en cualquiera de tus dudas'],['llamas', 'nombre', 'llamarte', 'identificas', 'identifiquese'], single_response=True)
+            #Respuestas habitats disponibles
+            response(['Los habitats disponibles son: ' + ', '.join(bd.get_habitats())], ['habitat', 'habitats', 'biomas', "seccion", "secciones", "partes"], single_response=True)
+
+
+            #Respuestas habitats de animales en singular
+            for animal in bd.get_animals():
+                    
+                    cutted_str = animal.split()
+
+                    key_words = cutted_str + ['habitat', 'donde', 'esta', 'estan', 'ubicacion']
+                    
+                    response([f"El {animal.title()} se encuentra en la sección {bd.get_habitat(animal).upper()}."], key_words, required_words=cutted_str)
+
+
+            # Respuesta a preguntas sobre los animales
+            response(['Los animales que hay son: ' + ', '.join(bd.get_animals())],
+                      ['animales', 'hay'], single_response=True)
 
 
 
