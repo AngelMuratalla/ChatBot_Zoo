@@ -1,5 +1,3 @@
-![Doge_Guide](avatar/Doge.png)
-
 # Doge Guide
 
 ## Instalacion & Setup
@@ -37,3 +35,4 @@ cd dirección_del_respositorio
 python app.py
 ```
 
+![Doge_Guide](avatar/Doge.png)
