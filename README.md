@@ -1,4 +1,4 @@
-![Doge_Guide](Doge_guide/Doge.png)
+![Doge_Guide](avatar/Doge.png)
 
 # Doge Guide
 
