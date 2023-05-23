@@ -133,10 +133,8 @@ class ChatBot:
             response(['La entrada al zoológico es totalmente gratis', 'No se cobra por la entrada al zoológico'], ['entrada', 'visita', 'entrar', 'visitar'], single_response=True)
             #Respuestas de estacionamiento
             response(['Hay más de un estacionamiento en la zona, da click el siguiente enlace para conocer más detalles de estos. https://www.chapultepec.org.mx/wp-content/uploads/2019/01/estacionamientos-y-ban%CC%83os.pdf'],['estacionamiento', 'entrar', 'estacionarme', 'carro', 'auto', 'aparcar', 'estacionar', 'aparcamiento'], single_response=True)
-            #Respuestas a cuota de estacionamiento
-            response(['Hay más de un estacionamiento en la zona, da click el siguiente enlace para conocer más detalles de estos. https://www.chapultepec.org.mx/wp-content/uploads/2019/01/estacionamientos-y-ban%CC%83os.pdf'],['estacionamiento', 'entrar', 'estacionarme', 'carro', 'auto', 'aparcar', 'estacionar', 'aparcamiento'], single_response=True)
-            #Respuestas a dudas generales
-            response(['El parque abre de Lunes a Viernes de Horario 8 a.m hasta 10 p.m, de Sabado a Domingo de 10 a.m hasta 10 p.m'],['horario','apertura','cierre','hora','dias','abren'], single_response=True)
+            #Respuestas a horario
+            response(['El zoológico abre de Martes a Domingo de 9:00 AM hasta las 4:30 PM, los días lunes no abre.'],['horario','apertura','cierre','hora','dias','abren'], single_response=True)
             #Respuestas a servicios
             response(['El zoológico cuenta con diversos servicios, puedes mirar un mapa para encontrar lo que buscas en el siguiente link. http://data.sedema.cdmx.gob.mx/zoo_chapultepec/mapa/'],['alimentos','salidas','emergencia','telefonos','sanitarios','oficinas','puntos','reunion','area','educativa','primeros','auxilios','sillas','ruedas','paqueteria','venta','mapas','guias','servicios','comida','comer'],single_response=True)                 
             #Respuesta a No
@@ -156,7 +154,7 @@ class ChatBot:
 
                     key_words = cutted_str + ['habitat', 'busco','donde', 'esta', 'encontrar','estan', 'ubicacion','buscar']
                     
-                    response([f"El/La {animal.title()} se encuentra en la sección {bd.get_habitat(animal).upper()}."], key_words, required_words=cutted_str)
+                    response([f"El/La {animal.title()} se encuentra en la sección {bd.get_habitat(animal).upper()}."], key_words, single_response=True)
 
             #Respuestas habitats de animales en plural
             for animal in bd.get_animals_2():
@@ -165,7 +163,7 @@ class ChatBot:
 
                     key_words = cutted_str + ['habitat', 'busco','donde','encontrar', 'estan', 'ubicacion','buscar']
                     
-                    response([f"Las/Los {animal.title()} se encuentran en la sección {bd.get_habitat_2(animal).upper()}."], key_words, required_words=cutted_str)
+                    response([f"Las/Los {animal.title()} se encuentran en la sección {bd.get_habitat_2(animal).upper()}."], key_words, single_response=True)
 
             #Respuestas a animales que no logró encontrar
             response(['No logre encontrar esos animales en el zoologico, lo lamento'],['buscar','habitat', 'donde', 'encontrar','estan', 'ubicacion','busco'],single_response=True)

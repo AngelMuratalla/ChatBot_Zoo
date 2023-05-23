@@ -20,7 +20,7 @@ pip --version
 
 ## Instalar Flask
 
-En la termina ejecuta el siguiente comando
+En la terminal ejecuta el siguiente comando
 
 ```
 pip install flask
