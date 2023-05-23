@@ -8,7 +8,7 @@ class Base:
     habitats = {
         "desierto": ["dromedarios", "camello", "lince rojo", "licaon", "tortuga africana", "papion sagrado", "borrego cimarron", "tarantula", "lobo mexicano"],
         "pastizales": ["loro gris", "puerco espin", "hiena", "tortuga aldabra", "tortuga mapini", "tortuga leopardo", "tortuga patas amarillas", "tortuga patas rojas", "leon africano", "rinoceronte blanco", "antilope acuatico", "ganso egipcio", "antilope sable", "hipopotamo", "ganso chino", "antilope orix", "antilope ñu", "cebra", "jirafa", "gallina de guinea", "grulla coronada", "avestruz", "antilope nilgo", "venado cerdo", "muflon europeo", "antilope gemsbock", "wallaby", "canguro rojo", "llama", "antilope nyala", "bisonte americano", "liebre de la patagonia"],
-        "franja costera": ["pinguino", "lobo marino"],
+        "franja costera": ["pinguino","foca", "lobo marino"],
         "tundra": ["oso polar"],
         "aviario": ["flamenco", "cisne", "aguila real", "halcon peregrino", "condor de los andes", "aguila cola blanca", "aguila rojinegra", "aguililla cola roja", "aguila caminera", "zopilote rey", "buho", "caracara", "zopilote comun", "condor de california", "pato pijiji", "emú"],
         "bosque templado": ["xoloitzcuintle", "venado cola blanca", "pavo real", "guajolote norteño", "teporingo", "mono japones", "mapache", "cacomixtle", "zorrillo", "oso pardo", "caracal", "lobo canadiense", "gamo", "zorro artico", "panda rojo", "panda gigante", "venado sika", "wapiti", "lobo mexicano", "tigre de sumatra"],
@@ -16,13 +16,13 @@ class Base:
     }
 
     habitats_2 = {
-        "desierto": ["dromedarios", "camello", "lince rojo", "licaon", "tortuga africana", "papion sagrado", "borrego cimarron", "tarantula", "lobo mexicano"],
-        "pastizales": ["loro gris", "puerco espin", "hiena", "tortuga aldabra", "tortuga mapini", "tortuga leopardo", "tortuga patas amarillas", "tortuga patas rojas", "leon africano", "rinoceronte blanco", "antilope acuatico", "ganso egipcio", "antilope sable", "hipopotamo", "ganso chino", "antilope orix", "antilope ñu", "cebra", "jirafa", "gallina de guinea", "grulla coronada", "avestruz", "antilope nilgo", "venado cerdo", "muflon europeo", "antilope gemsbock", "wallaby", "canguro rojo", "llama", "antilope nyala", "bisonte americano", "liebre de la patagonia"],
-        "franja costera": ["pinguino", "lobo marino"],
-        "tundra": ["oso polar"],
-        "aviario": ["flamenco", "cisne", "aguila real", "halcon peregrino", "condor de los andes", "aguila cola blanca", "aguila rojinegra", "aguililla cola roja", "aguila caminera", "zopilote rey", "buho", "caracara", "zopilote comun", "condor de california", "pato pijiji", "emú"],
-        "bosque templado": ["xoloitzcuintle", "venado cola blanca", "pavo real", "guajolote norteño", "teporingo", "mono japones", "mapache", "cacomixtle", "zorrillo", "oso pardo", "caracal", "lobo canadiense", "gamo", "zorro artico", "panda rojo", "panda gigante", "venado sika", "wapiti", "lobo mexicano", "tigre de sumatra"],
-        "bosque tropical": ["ajolote", "jaguar negro", "ocelote", "capibara", "cotorra de la patagonia", "mono ardilla", "jaguar", "mono araña", "capuchino de cuernos", "coati", "martucha", "capuchino de gargante blanca", "oso de anteojos", "binturong", "mono rhesus", "mono araña", "chimpance", "puma", "paloma verde", "venado temazate", "aguti dorado", "orangutan", "cocodrilo", "titi de goeldi", "titi cabeza de leon dorado", "titi copete de algodon", "gorila", "pantera", "leopardo", "tapir", "mono patas", "tigre de bengala"]
+        "desierto": ["dromedarios", "camellos", "linces rojos", "licaones", "tortugas africanas", "papiones sagrados", "borregos cimarrones", "tarantulas", "lobos mexicanos"],
+        "pastizales": ["loros grises", "puerco espines", "hienas", "tortugas aldabra", "tortugas mapini", "tortugas leopardos", "tortugas patas amarillas", "tortugas patas rojas","tortugas", "leones africanos","leones",'leones', "rinocerontes blancos", "antilopes acuaticos", "gansos egipcios", "antilopes sable", "hipopotamos", "gansos chino", "antilopes orix", "antilopes ñu", "cebras", "jirafas", "gallinas de guinea", "grullas coronadas", "avestruzes", "antilopes nilgo", "venados cerdo", "muflones europeos", "antilopes gemsbock", "wallabys", "canguros rojo", "llamas", "antilopes nyala", "bisontes americanos", "liebres de la patagonia"],
+        "franja costera": ["pinguinos","focas", "lobos marinos"],
+        "tundra": ["osos polares"],
+        "aviario": ["flamencos", "cisnes", "aguilas reales", "halcones peregrinos", "condores de los andes", "aguilas cola blanca", "aguilas rojinegra", "aguilillas cola roja", "aguilas camineras", "zopilotes rey", "buhos", "caracaras", "zopilotes comunes", "condores de california", "patos pijiji", "emús"],
+        "bosque templado": ["xoloitzcuintles", "venados cola blanca", "pavos reales", "guajolotes norteños", "teporingos", "monos japoneses", "mapaches", "cacomixtles", "zorrillos", "osos pardos", "caracales", "lobos canadienses", "gamos", "zorros artico","pandas", "pandas rojos", "pandas gigantes", "venados sika", "wapitis", "lobos mexicanos", "tigres de sumatra"],
+        "bosque tropical": ["ajolotes", "jaguares negros", "ocelotes", "capibaras", "cotorras de la patagonia", "monos ardilla", "jaguares", "monos araña", "capuchinos de cuernos", "coatis", "martuchas", "capuchinos de gargante blanca", "osos de anteojos", "binturong", "monos rhesus", "monos araña", "chimpances", "pumas", "palomas verdes", "venados temazates", "agutis dorados", "orangutanes", "cocodrilos", "titis de goeldi", "titis cabeza de leon dorado", "titis copete de algodon", "gorilas","panteras", "leopardos", "tapires", "monos patas", "tigres de bengala"]
     }
 
 
@@ -32,12 +32,27 @@ class Base:
                 return habitat
         return None
 
+
     def get_habitats(self):
         return list(self.habitats.keys())
+
 
     def get_animals(self):
         animals = []
         for habitat in self.habitats.values():
+            animals.extend(habitat)
+        return animals
+    
+    #Plurales
+    def get_habitat_2(self, animal_plural):
+        for habitat, animals in self.habitats_2.items():
+            if animal_plural in animals:
+                return habitat
+        return None
+
+    def get_animals_2(self):
+        animals = []
+        for habitat in self.habitats_2.values():
             animals.extend(habitat)
         return animals
 
@@ -124,6 +139,10 @@ class ChatBot:
             response(['El parque abre de Lunes a Viernes de Horario 8 a.m hasta 10 p.m, de Sabado a Domingo de 10 a.m hasta 10 p.m'],['horario','apertura','cierre','hora','dias','abren'], single_response=True)
             #Respuestas a servicios
             response(['El zoológico cuenta con diversos servicios, puedes mirar un mapa para encontrar lo que buscas en el siguiente link. http://data.sedema.cdmx.gob.mx/zoo_chapultepec/mapa/'],['alimentos','salidas','emergencia','telefonos','sanitarios','oficinas','puntos','reunion','area','educativa','primeros','auxilios','sillas','ruedas','paqueteria','venta','mapas','guias','servicios','comida','comer'],single_response=True)                 
+            #Respuesta a No
+            response(['¿No? Está bien'],['no'])
+            #Respuesta a Sí
+            response(['Vale'],['si'])
             #Respuesta sobre su nombre
             response(['¡Mi nombre es Doge Guide y estoy listo para ayudarte a explorar el zoologico!', 'Soy Doge Guide y me encantara ayudarte en cualquiera de tus dudas'],['llamas', 'nombre', 'llamarte', 'identificas', 'identifiquese'], single_response=True)
             #Respuestas habitats disponibles
@@ -135,9 +154,21 @@ class ChatBot:
                     
                     cutted_str = animal.split()
 
-                    key_words = cutted_str + ['habitat', 'donde', 'esta', 'estan', 'ubicacion']
+                    key_words = cutted_str + ['habitat', 'busco','donde', 'esta', 'encontrar','estan', 'ubicacion','buscar']
                     
-                    response([f"El {animal.title()} se encuentra en la sección {bd.get_habitat(animal).upper()}."], key_words, required_words=cutted_str)
+                    response([f"El/La {animal.title()} se encuentra en la sección {bd.get_habitat(animal).upper()}."], key_words, required_words=cutted_str)
+
+            #Respuestas habitats de animales en plural
+            for animal in bd.get_animals_2():
+                    
+                    cutted_str = animal.split()
+
+                    key_words = cutted_str + ['habitat', 'busco','donde','encontrar', 'estan', 'ubicacion','buscar']
+                    
+                    response([f"Las/Los {animal.title()} se encuentran en la sección {bd.get_habitat_2(animal).upper()}."], key_words, required_words=cutted_str)
+
+            #Respuestas a animales que no logró encontrar
+            response(['No logre encontrar esos animales en el zoologico, lo lamento'],['buscar','habitat', 'donde', 'encontrar','estan', 'ubicacion','busco'],single_response=True)
 
 
             # Respuesta a preguntas sobre los animales
