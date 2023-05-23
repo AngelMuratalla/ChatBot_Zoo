@@ -1,3 +1,5 @@
+![Doge_Guide](Doge_guide/Doge.png)
+
 # Doge Guide
 
 ## Instalacion & Setup
