@@ -145,7 +145,9 @@ class ChatBot:
             response(['¡Mi nombre es Doge Guide y estoy listo para ayudarte a explorar el zoologico!', 'Soy Doge Guide y me encantara ayudarte en cualquiera de tus dudas'],['llamas', 'nombre', 'llamarte', 'identificas', 'identifiquese'], single_response=True)
             #Respuestas habitats disponibles
             response(['Los habitats disponibles son: ' + ', '.join(bd.get_habitats())], ['habitat', 'habitats', 'biomas', "seccion", "secciones", "partes"], single_response=True)
-
+            #Respuestas a mapa
+            response(['El mapa del zoologico se encuentra en el siguiente link. http://data.sedema.cdmx.gob.mx/zoo_chapultepec/mapa/'],['mapa'],single_response=True)
+            
 
             #Respuestas habitats de animales en singular
             for animal in bd.get_animals():
