@@ -122,7 +122,7 @@ class ChatBot:
             #Respuestas a saludos
             response(['Hola, ¿puedo ayudarte en algo?', 'Gracias por saludar, ¿puedo servirte en algo?'], ['hola', 'tal', 'saludos', 'buenas', 'tardes', 'buenos', 'dias'], single_response=True)
             #Respuestas a despedidas
-            response(['¡Nos vemos!', 'Hasta luego...', 'Bye'],['adios','hasta','luego','nos','vemos','bye','me','voy'], single_response=True)
+            response(['¡Nos vemos!','Hasta luego...'],['adios','hasta','luego','nos','vemos','bye','me','voy'], single_response=True)
             #Respuestas a agradecimientos
             response(['De nada, me alegro haber sido de utilidad', '¡Es un placer!', '¡De nada!'], ['gracias', 'agradezco', 'thanks','ha','sido','util','utilidad','agradecer','agradecerte'], single_response=True)
             #Respuestas de ¿Como estas?
@@ -136,7 +136,7 @@ class ChatBot:
             #Respuestas a horario
             response(['El zoológico abre de Martes a Domingo de 9:00 AM hasta las 4:30 PM, los días lunes no abre.'],['horario','apertura','cierre','hora','dias','abren'], single_response=True)
             #Respuestas a servicios
-            response(['El zoológico cuenta con diversos servicios, puedes mirar un mapa para encontrar lo que buscas en el siguiente link. http://data.sedema.cdmx.gob.mx/zoo_chapultepec/mapa/'],['alimentos','salidas','emergencia','telefonos','sanitarios','oficinas','puntos','reunion','area','educativa','primeros','auxilios','sillas','ruedas','paqueteria','venta','mapas','guias','servicios','comida','comer'],single_response=True)                 
+            response(['El zoológico cuenta con diversos servicios, puedes mirar un mapa para encontrar lo que buscas en el siguiente link. http://data.sedema.cdmx.gob.mx/zoo_chapultepec/mapa/'],['alimentos','salidas','banos','emergencia','telefonos','sanitarios','oficinas','puntos','reunion','area','educativa','primeros','auxilios','sillas','ruedas','paqueteria','venta','mapas','guias','servicios','comida','comer'],single_response=True)                 
             #Respuesta a No
             response(['¿No? Está bien'],['no'])
             #Respuesta a Sí
@@ -161,17 +161,17 @@ class ChatBot:
                     
                     cutted_str = animal.split()
 
-                    key_words = cutted_str + ['habitat', 'busco','donde','encontrar', 'estan', 'ubicacion','buscar']
+                    key_words = cutted_str + ['habitat', 'busco','encontrar', 'ubicacion','buscar']
                     
                     response([f"Las/Los {animal.title()} se encuentran en la sección {bd.get_habitat_2(animal).upper()}."], key_words, single_response=True)
 
             #Respuestas a animales que no logró encontrar
-            response(['No logre encontrar esos animales en el zoologico, lo lamento'],['buscar','habitat', 'donde', 'encontrar','estan', 'ubicacion','busco'],single_response=True)
+            response(['No logre encontrar esos animales en el zoologico, lo lamento'],['buscar','habitat', 'encontrar','ubicacion','busco'],single_response=True)
 
 
             # Respuesta a preguntas sobre los animales
             response(['Los animales que hay son: ' + ', '.join(bd.get_animals())],
-                      ['animales', 'hay'], single_response=True)
+                      ['animales'], single_response=True)
 
 
 
